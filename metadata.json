@@ -1,0 +1,6 @@
+{
+  "name": "SAATHI",
+  "description": "Saathi means companion. A women's safety app featuring one-tap SOS, live location sharing, police station finder, and nearby Saathi women support network.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

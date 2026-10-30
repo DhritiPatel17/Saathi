@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #FBE5D6;
+  --ink: #141414;
+  --pink: #F58BA8;
+  --pink-deep: #E4577F;
+  --pink-pale: #F9C9D3;
+  --sage: #84B082;
+
+  --font-brand: 'Syne', sans-serif;
+  --font-display: 'Instrument Serif', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-hand: 'Caveat', cursive;
+
+  --font-tagline: 'Caveat', cursive;
+  --font-card-title: 'Bricolage Grotesque', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--cream);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: radial-gradient(rgba(20, 20, 20, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.font-brand {
+  font-family: var(--font-brand);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+.font-tagline {
+  font-family: var(--font-tagline);
+}
+
+.font-card-title {
+  font-family: var(--font-card-title);
+}
+
+/* Poster Glass Card with hard ink offset shadow */
+.poster-glass {
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid var(--ink);
+  border-radius: 24px;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.poster-glass-black {
+  background: rgba(20, 20, 20, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid var(--cream);
+  border-radius: 24px;
+  box-shadow: 6px 6px 0 var(--pink);
+  color: var(--cream);
+}
+
+.poster-nav {
+  background: rgba(251, 229, 214, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 1.5px solid var(--ink);
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(228, 87, 127, 0.8);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 35px rgba(228, 87, 127, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(228, 87, 127, 0);
+  }
+}
+
+.sos-poster-pulse {
+  animation: pulse-ring 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes draw-underline {
+  0% {
+    stroke-dashoffset: 300;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.wavy-underline-draw {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw-underline 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.35s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wavy-underline-draw {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}
